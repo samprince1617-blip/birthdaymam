@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ramya Mam ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background:
+      radial-gradient(ellipse at top, #49305f 0%, transparent 55%),
+      linear-gradient(135deg, #100c20, #21112e, #100b20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(2px 2px at 70% 20%, #ffd98a, transparent),
+      radial-gradient(2px 2px at 90% 70%, white, transparent),
+      radial-gradient(2px 2px at 35% 85%, #ffb7d5, transparent);
+    background-size: 250px 250px;
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .25; }
+    to { opacity: .9; }
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    padding: 50px 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 220, 160, .35);
+    border-radius: 30px;
+    background: rgba(255,255,255,.07);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 80px rgba(0,0,0,.35);
+    z-index: 2;
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(35px) scale(.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.crown {
+    font-size: 42px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-12px); }
+}
+
+.small-title {
+    color: #f5d79a;
+    letter-spacing: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 12vw, 88px);
+    line-height: 1.2;
+    font-weight: normal;
+    background: linear-gradient(120deg, #fff4cc, #e9b95f, #fff0c4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 4px 15px rgba(255,190,90,.2));
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(27px, 7vw, 43px);
+    color: #fff;
+    letter-spacing: 3px;
+    margin-top: 12px;
+}
+
+.line {
+    width: 90px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e9bd73, transparent);
+    margin: 25px auto;
+}
+
+.intro {
+    font-size: 14px;
+    line-height: 2;
+    color: #e8dce9;
+    max-width: 450px;
+    margin: auto;
+    font-weight: 300;
+}
+
+.heart {
+    display: inline-block;
+    color: #ff8cba;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.35); }
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    color: #29162b;
+    background: linear-gradient(120deg, #ffe7a9, #e9b75d);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 5px 30px rgba(233,183,93,.25);
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 35px rgba(255,207,120,.4);
+}
+
+.message {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 1s ease, opacity 1s ease;
+}
+
+.message.show {
+    max-height: 350px;
+    opacity: 1;
+    margin-top: 30px;
+}
+
+.message p {
+    font-size: 14px;
+    color: #f6e9ed;
+    line-height: 2;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 34px;
+    color: #f6d28e;
+    margin-top: 18px;
+}
+
+.footer {
+    margin-top: 35px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #bfa9c8;
+}
+
+/* Floating decorations */
+.decoration {
+    position: fixed;
+    font-size: 28px;
+    pointer-events: none;
+    opacity: .65;
+    animation: drift 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+.d1 { left: 8%; top: 15%; }
+.d2 { right: 9%; top: 23%; animation-delay: 2s; }
+.d3 { left: 12%; bottom: 15%; animation-delay: 1s; }
+.d4 { right: 12%; bottom: 12%; animation-delay: 3s; }
+
+@keyframes drift {
+    0%,100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-25px) rotate(12deg); }
+}
+
+@media(max-width: 480px) {
+    .card {
+        padding: 40px 20px;
+        border-radius: 24px;
+    }
+
+    .small-title {
+        letter-spacing: 3px;
+    }
+
+    .intro, .message p {
+        font-size: 13px;
+    }
+
+    .decoration {
+        font-size: 21px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+<div class="stars"></div>
+
+<div class="decoration d1">🎈</div>
+<div class="decoration d2">✨</div>
+<div class="decoration d3">💗</div>
+<div class="decoration d4">🎈</div>
+
+<main class="card">
+
+    <div class="crown">👑</div>
+
+    <div class="small-title">A special day • A special person</div>
+
+    <h1>Happy Birthday</h1>
+
+    <div class="name">RAMYA MAM</div>
+
+    <div class="line"></div>
+
+    <p class="intro">
+        Some people make ordinary moments beautiful
+        just by being themselves. Today is all about
+        celebrating one such wonderful person.
+        <br>
+        Wishing you a day filled with love,
+        laughter and countless beautiful memories.
+        <span class="heart">♥</span>
+    </p>
+
+    <button onclick="revealMessage()">
+        ✨ OPEN YOUR SURPRISE ✨
+    </button>
+
+    <div class="message" id="message">
+        <div class="line"></div>
+
+        <p>
+            Dear Ramya Mam,<br><br>
+
+            You are more than just a teacher.
+            You are someone truly special, whose presence
+            brings happiness and whose words leave
+            beautiful memories.<br><br>
+
+            May God bless you with endless happiness,
+            good health, peace and success.
+            May every new chapter of your life be
+            more beautiful than the last.<br><br>
+
+            Keep smiling and keep being the
+            wonderful person you are.
+            You deserve all the happiness in the world!
+            ❤️
+        </p>
+
+        <div class="signature">
+            With lots of love ❤️
+        </div>
+    </div>
+
+    <div class="footer">
+        MADE WITH LOVE • JUST FOR YOU
+    </div>
+
+</main>
+
+<script>
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+let pieces = [];
+let animationRunning = false;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function createConfetti() {
+    const colors = [
+        "#ffd166", "#ff8fab", "#ffffff",
+        "#cdb4db", "#f9c74f", "#a8dadc"
+    ];
+
+    for (let i = 0; i < 180; i++) {
+        pieces.push({
+            x: Math.random() * canvas.width,
+            y: -Math.random() * canvas.height,
+            size: Math.random() * 7 + 3,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            speed: Math.random() * 3 + 2,
+            angle: Math.random() * 6,
+            spin: Math.random() * .12 - .06
+        });
+    }
+
+    if (!animationRunning) {
+        animationRunning = true;
+        animateConfetti();
+    }
+}
+
+function animateConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    pieces.forEach((p) => {
+        p.y += p.speed;
+        p.x += Math.sin(p.angle) * 1.5;
+        p.angle += p.spin;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.angle);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+        ctx.restore();
+    });
+
+    pieces = pieces.filter(p => p.y < canvas.height + 20);
+
+    if (pieces.length > 0) {
+        requestAnimationFrame(animateConfetti);
+    } else {
+        animationRunning = false;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+}
+
+function revealMessage() {
+    const message = document.getElementById("message");
+
+    message.classList.add("show");
+
+    createConfetti();
+
+    document.querySelector("button").textContent =
+        "❤️ HAPPY BIRTHDAY RAMYA MAM ❤️";
+}
+
+window.addEventListener("load", () => {
+    setTimeout(createConfetti, 500);
+});
+</script>
+
+</body>
+</html>
